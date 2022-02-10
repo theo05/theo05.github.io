@@ -111,8 +111,9 @@
             compte = compte + 1;
             obt.innerHTML = "adjusting : "+compte+" ";
             if (pos.coords.accuracy <5){
-                
-                let data = '{"'+String(x)+'" : "'+String(y)+'"}';
+                var a = x + "";
+                var b = y + "";
+                var z = '{"'+a+'" : "'+b+'"}'
                 let req = new XMLHttpRequest();
                 req.onreadystatechange = () => {
                   if (req.readyState == XMLHttpRequest.DONE) {
@@ -122,7 +123,7 @@
                 req.open("PUT", "https://api.jsonbin.io/v3/b/61f66892518e5f3b2ab2decc", true);
                 req.setRequestHeader("Content-Type", "application/json");
                 req.setRequestHeader("X-Master-Key", "$2b$10$.bpWrRO./jGzxmGtLJtukudiJBAjxCVdnkgtxOshNmKHzX0fqTMuC");
-                req.send(data);
+                req.send(z);
                 compte1 = compte1 +1;
                 sent.innerHTML = compte +" request sent";
                 sleep(2000);

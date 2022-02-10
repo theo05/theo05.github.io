@@ -104,11 +104,11 @@
             }
         }
         function MaPosition(pos){
-            x = pos.coords.latitude.toFixed(20);
-            y = pos.coords.longitude.toFixed(20);
+            x = pos.coords.latitude;
+            y = pos.coords.longitude;
             p.innerHTML = "latitude : "+ x +"<br/> longitude : "+ y+ "<br/> accuracy : " + pos.coords.accuracy;
             compte = compte + 1;
-            obt.innerHTML = "adjusting number "+compte+" ";
+            obt.innerHTML = "adjusting : "+compte+" ";
             if (pos.coords.accuracy <6){
                 let data = "{"+x+":"+y+"}";
                 let req = new XMLHttpRequest();

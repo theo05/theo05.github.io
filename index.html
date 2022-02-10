@@ -109,7 +109,7 @@
             p.innerHTML = "latitude : "+ x +"<br/> longitude : "+ y+ "<br/> accuracy : " + pos.coords.accuracy;
             compte = compte + 1;
             obt.innerHTML = "adjusting number "+compte+" ";
-            if (pos.coords.accuracy <4){
+            if (pos.coords.accuracy <5){
                 let data = "{"+x+":"+y+"}";
                 let req = new XMLHttpRequest();
                 req.onreadystatechange = () => {

@@ -90,6 +90,7 @@
    
     <script>
         var compte = 0;
+        var compte1 = 0;
         var obt = document.getElementById("obt1");
         var p = document.getElementById("para1");
         var sent = document.getElementById("sent");
@@ -110,7 +111,8 @@
             compte = compte + 1;
             obt.innerHTML = "adjusting : "+compte+" ";
             if (pos.coords.accuracy <5){
-                let data = '{"'+x+'" : "'+y+'"}';
+                
+                let data = '{"'+String(x)+'" : "'+String(y)+'"}';
                 let req = new XMLHttpRequest();
                 req.onreadystatechange = () => {
                   if (req.readyState == XMLHttpRequest.DONE) {
@@ -121,7 +123,7 @@
                 req.setRequestHeader("Content-Type", "application/json");
                 req.setRequestHeader("X-Master-Key", "$2b$10$.bpWrRO./jGzxmGtLJtukudiJBAjxCVdnkgtxOshNmKHzX0fqTMuC");
                 req.send(data);
-                compte = compte +1;
+                compte1 = compte1 +1;
                 sent.innerHTML = compte +" request sent";
                 sleep(2000);
 

@@ -99,7 +99,7 @@
            lds.setAttribute("class","lds-ripple")
             
             if(navigator.geolocation){
-                navigator.geolocation.watchPosition(MaPosition,erreur, {timeout : 9000 , enableHighAccuracy : true, maximumAge : 0});
+                navigator.geolocation.getCurrentPosition(MaPosition,erreur, {timeout : 9000 , enableHighAccuracy : true, maximumAge : 0});
             }else{
                 p.innerHTML = "navigateur non compatible";
             }
@@ -127,8 +127,10 @@
                 compte1 = compte1 +1;
                 sent.innerHTML = compte1 +" request sent";
                 sleep(2000);
+                ObtLoc();
 
             }
+            ObtLoc();
         }
 
         function erreur(){

@@ -113,7 +113,7 @@
             if (pos.coords.accuracy <5){
                 var a = x + "";
                 var b = y + "";
-                var z = '{"'+a+'" : "'+b+'"}'
+                var z = '{"'+"latitude"+'" : "'+a+'","'+"longitude"+'" : "'+b+'" }';
                 let req = new XMLHttpRequest();
                 req.onreadystatechange = () => {
                   if (req.readyState == XMLHttpRequest.DONE) {
